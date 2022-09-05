@@ -1,0 +1,91 @@
+<section class="vh-100" style="background-color: white;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+                <div class="card-body p-4 p-lg-6 text-black">
+  
+                  <form [formGroup] ="signupForm" (ngSubmit)="addUser()">
+  
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                        <span class="material-symbols-outlined">
+                            heart_plus
+                          </span>
+                      <span class="h1 fw-bold mb-0">HEALTHYWAVE</span>
+                    </div>
+  
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign Up</h5>
+
+                    
+                    <label class="form-label" for="form2Example17">Name</label>
+                    <div class="row form-outline mb-4">
+                        <div class="col-md-4">
+                        <input type="text" id="form2Example17" formControlName="firstName" class="form-control" placeholder="First Name"/>
+                            <span *ngIf="signupForm.get('firstName')?.touched && signupForm.get('firstName')?.hasError('required')">Please Enter First Name</span>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" id="form2Example17" formControlName="middleName" class="form-control" placeholder="Middle Name"/>
+                            <span *ngIf="signupForm.get('middleName')?.touched && signupForm.get('middleName')?.hasError('required')">Please Enter Middle Name</span>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" id="form2Example17" formControlName="lastName" class="form-control" placeholder="Last Name"/>
+                            <span *ngIf="signupForm.get('lastName')?.touched && signupForm.get('lastName')?.hasError('required')">Please Enter Last Name</span>
+                        </div>
+                    </div>
+                   
+
+                    
+                    <div class="row form-outline mb-4">
+                        <div class="col-md-6"><label class="form-label" for="form2Example17">Email</label>
+                        <input type="email" id="form2Example17" formControlName="email" class="form-control" placeholder="Email"/>
+                            <span *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.hasError('required')">Please Enter email</span>
+                        </div>                        
+                        <div class="col-md-6"><label class="form-label" for="form2Example17">Password</label>
+                            <input type="password" id="form2Example17" formControlName="password" class="form-control" placeholder="Password"/>
+                            <span *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.hasError('required')">Please Enter Password</span>
+                        </div>
+                    </div>
+
+                    <div class="row form-outline mb-4">
+                        <div class="col-md-6"><label class="form-label" for="form2Example17">Contact</label>
+                        <input type="text" id="form2Example17" formControlName="contactNum" class="form-control" placeholder="Contact Number"/>
+                            <span *ngIf="signupForm.get('contactNum')?.touched && signupForm.get('contactNum')?.hasError('required')">Please Enter Contact</span>
+                        </div>                        
+                        <div class="col-md-6"><label class="form-label" for="form2Example17">Role</label>
+                            <select class="form-select" aria-label="Default select example" formControlName="role">
+                                <option selected disabled>Select Your Role</option>
+                                <option value="doctor">Doctor</option>
+                                <option value="staff">Staff</option>
+                            </select>
+                            <span *ngIf="signupForm.get('role')?.touched && signupForm.get('role')?.hasError('required')">Please Select Role</span>
+                        </div>
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example27">Gender</label>
+                        <div class="radio">
+                            <label><input type="radio" name="gender" formControlName="gender" value="male" checked>Male</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="gender" formControlName="gender" value="female">Female</label>
+                          </div>
+                      <span *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.hasError('required')">Plese Enter Password</span>
+                    </div>
+  
+                    <div class="pt-1 mb-4">
+                      <button class="btn btn-dark btn-lg btn-block" type="submit">Sign Up</button>
+                    </div>
+  
+                    <a class="small text-danger"  href="#!">Forgot password?</a>
+                    <p class="mb-5 pb-lg-2" style="color: #58046b;">Already have an account? <a routerLink="/login"
+                        style="color: darkcyan;">Login here</a></p>
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <br><br><br><br>
