@@ -21,6 +21,7 @@ import { StaffDashboardComponent } from './staff/staff-dashboard/staff-dashboard
 import { DoctorLayoutComponent } from './doctor/doctor-layout/doctor-layout.component';
 import { DoctorDashboardComponent } from './doctor/doctor-dashboard/doctor-dashboard.component';
 import { AddAppointmentComponent } from './user/add-appointment/add-appointment.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { AddAppointmentComponent } from './user/add-appointment/add-appointment.
     DoctorLayoutComponent,
     DoctorDashboardComponent,
     AddAppointmentComponent,
+    SignupComponent,
     
   ],
   imports: [
