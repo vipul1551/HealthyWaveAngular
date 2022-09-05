@@ -36,19 +36,20 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("userId",resp.data.userId)
       localStorage.setItem("email",resp.data.email)
       localStorage.setItem("firstName",resp.data.firstName)
-      this.toastr.success("Login done"+resp.data.authToken)
+      // this.toastr.success("Login done"+resp.data.authToken)
 
       this.authTokenService.authToken = resp.data.authToken
       this.authTokenService.userId = resp.data.userId 
       
       if (resp.data.role.roleName == "staff") {
 
-        this.router.navigateByUrl("/")
+        this.toastr.error(resp.data.msg, "200")
+        this.router.navigateByUrl("")
       } else if (resp.data.role.roleName == "admin") {
 
         this.router.navigateByUrl("/dashboard")
       }
-
+// hii bro
 
     }, err => {
       this.toastr.error("Invalid Credentials....", "401")
