@@ -6,10 +6,9 @@ import { HomeComponent } from './user/home/home.component';
 import { UserLayoutComponent } from './user/user-layout/user-layout.component';
 const routes: Routes = [
   {
-    component: UserLayoutComponent, path: "user", children: [
-      { component: HomeComponent, path: "home" },
-      { component: LoginComponent, path: "login" }
-    ]
+    component: UserLayoutComponent, path: "", children: [
+      { component: HomeComponent, path: "" },
+      { component: LoginComponent, path: "login" },]
   },
   {
     component: AdminLayoutComponent, path: "admin", children: [
