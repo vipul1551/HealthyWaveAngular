@@ -16,12 +16,15 @@ const routes: Routes = [
       { component: SignupComponent, path: "signup"},
     {component:AddAppointmentComponent,path:"addappointment"}]
       
+<<<<<<< HEAD
     
   },
   {
     component:StaffLayoutComponent,path:"staff",children:[
       { component: StaffDashboardComponent, path: "dashboard" }]
     
+=======
+>>>>>>> eab5bd01be5000abbedc668318f2cd168450fe45
   },
   {
     component: AdminLayoutComponent, path: "admin", children: [

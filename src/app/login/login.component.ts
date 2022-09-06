@@ -42,17 +42,21 @@ export class LoginComponent implements OnInit {
       this.authTokenService.userId = resp.data.userId 
       
       if (resp.data.role.roleName == "staff") {
-        console.log(resp.msg);
+        console.log(resp);
         
         this.toastr.success(resp.msg)
         this.router.navigateByUrl("")
-      } else if (resp.data.role.roleName == "admin") {
-
+      } else if (resp.data.role.roleName == "doctor") {
+        this.toastr.success(resp.msg)
+        this.router.navigateByUrl("")
+      }else if (resp.data.role.roleName == "admin") {
+        this.toastr.success(resp.msg)
         this.router.navigateByUrl("/dashboard")
       }
 
-    }, err => {
-      this.toastr.error("Invalid Credentials....", "401")
+    }, err => {console.log(err.error.msg);
+    
+      this.toastr.error(err.error.msg)
     })
      
   }
