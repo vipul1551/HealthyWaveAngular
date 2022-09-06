@@ -6,24 +6,28 @@ import { AddAppointmentComponent } from './user/add-appointment/add-appointment.
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './user/home/home.component';
 import { UserLayoutComponent } from './user/user-layout/user-layout.component';
+import { StaffLayoutComponent } from './staff/staff-layout/staff-layout.component';
+import { StaffDashboardComponent } from './staff/staff-dashboard/staff-dashboard.component';
 const routes: Routes = [
   {
     component: UserLayoutComponent, path: "", children: [
       { component: HomeComponent, path: "" },
       { component: LoginComponent, path: "login" },
-<<<<<<< HEAD
       { component: SignupComponent, path: "signup"},
     {component:AddAppointmentComponent,path:"addappointment"}]
       
     
-=======
-      { component: SignupComponent, path: "signup"}
-    ]
->>>>>>> 924aaad394bb15dea6322b73adfb13ef0c700bb1
+  },
+  {
+    component:StaffLayoutComponent,path:"staff",children:[
+      { component: StaffDashboardComponent, path: "dashboard" }]
+    
   },
   {
     component: AdminLayoutComponent, path: "admin", children: [
-    ]
+      { component: HomeComponent, path: "" },
+     ]
+    
   }
 ];
 

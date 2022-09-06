@@ -23,8 +23,8 @@ import { DoctorDashboardComponent } from './doctor/doctor-dashboard/doctor-dashb
 import { AddAppointmentComponent } from './user/add-appointment/add-appointment.component';
 import { SignupComponent } from './signup/signup.component';
 import { TokenInterceptor } from './interceptor/token.interceptor';
-
-
+import { StaffFooterComponent } from './staff/staff-footer/staff-footer.component';
+import { StaffHeaderComponent } from './staff/staff-header/staff-header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,11 +40,10 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
     StaffDashboardComponent,
     DoctorLayoutComponent,
     DoctorDashboardComponent,
-<<<<<<< HEAD
     AddAppointmentComponent,
-=======
->>>>>>> 924aaad394bb15dea6322b73adfb13ef0c700bb1
     SignupComponent,
+    StaffFooterComponent,
+    StaffHeaderComponent,
     
   ],
   imports: [
@@ -55,7 +54,7 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
     ToastrModule.forRoot(),
     HttpClientModule,
     DialogModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]
