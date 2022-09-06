@@ -40,7 +40,10 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
     StaffDashboardComponent,
     DoctorLayoutComponent,
     DoctorDashboardComponent,
+<<<<<<< HEAD
     AddAppointmentComponent,
+=======
+>>>>>>> 924aaad394bb15dea6322b73adfb13ef0c700bb1
     SignupComponent,
     
   ],

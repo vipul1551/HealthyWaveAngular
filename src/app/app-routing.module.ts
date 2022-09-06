@@ -11,10 +11,15 @@ const routes: Routes = [
     component: UserLayoutComponent, path: "", children: [
       { component: HomeComponent, path: "" },
       { component: LoginComponent, path: "login" },
+<<<<<<< HEAD
       { component: SignupComponent, path: "signup"},
     {component:AddAppointmentComponent,path:"addappointment"}]
       
     
+=======
+      { component: SignupComponent, path: "signup"}
+    ]
+>>>>>>> 924aaad394bb15dea6322b73adfb13ef0c700bb1
   },
   {
     component: AdminLayoutComponent, path: "admin", children: [
