@@ -30,7 +30,7 @@ export class AddAppointmentComponent implements OnInit {
   addAppointment(){
     console.log(this.appointmentForm.value);
     this.appointmentService.addAppointment(this.appointmentForm.value).subscribe(res =>{
-      this.toastr.success("Youre Appointment Add Successfuly...")
+      this.toastr.success("Your Appointment Submitted Successfuly...")
       this.router.navigateByUrl("")
     },err => {
       this.toastr.error("SMW Please Contact Admin","444")

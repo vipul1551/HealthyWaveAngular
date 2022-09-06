@@ -42,8 +42,9 @@ export class LoginComponent implements OnInit {
       this.authTokenService.userId = resp.data.userId 
       
       if (resp.data.role.roleName == "staff") {
-
-        this.toastr.error(resp.data.msg, "200")
+        console.log(resp.msg);
+        
+        this.toastr.success(resp.msg)
         this.router.navigateByUrl("")
       } else if (resp.data.role.roleName == "admin") {
 

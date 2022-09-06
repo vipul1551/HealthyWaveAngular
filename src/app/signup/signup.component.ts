@@ -32,12 +32,13 @@ export class SignupComponent implements OnInit {
   
     this.sessionService.signupApi(this.signupForm.value).subscribe(resp =>{
     
-      this.toastr.success("Sign Up Done")
-      this.router.navigateByUrl("/dashboard")
+      this.toastr.success("Sign Up Done...")
+      this.toastr.success("Please Wait For Some Time ")
+      this.router.navigateByUrl("/login")
  
 
   }, err => {
-    this.toastr.error("SMW", "401")
+    this.toastr.error(err)
   })
   }
 

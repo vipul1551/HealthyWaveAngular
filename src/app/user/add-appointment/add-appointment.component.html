@@ -16,8 +16,6 @@
                     </div> -->
 
                                 <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Add Appointment</h5>
-
-
                                 <label class="form-label" for="form2Example17">Patient Details :</label>
                                 <div class="row form-outline mb-4">
                                     <div class="col-md-4">
@@ -57,11 +55,11 @@
 
 
                                     <div class="col-md-6">
-                                        <input type="password" id="form2Example17"
+                                        <input type="text" id="form2Example17"
                                             formControlName="patientRelativeContact" class="form-control"
                                             placeholder="Patient Relative Contact Number" />
                                         <span
-                                            *ngIf="appointmentForm.get('password')?.touched && appointmentForm.get('patientRelativeContact')?.hasError('required')">Please
+                                            *ngIf="appointmentForm.get('patientRelativeContact')?.touched && appointmentForm.get('patientRelativeContact')?.hasError('required')">Please
                                             Enter Relative Contact Number</span>
                                     </div>
                                 </div>

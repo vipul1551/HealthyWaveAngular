@@ -22,6 +22,7 @@ import { DoctorLayoutComponent } from './doctor/doctor-layout/doctor-layout.comp
 import { DoctorDashboardComponent } from './doctor/doctor-dashboard/doctor-dashboard.component';
 import { AddAppointmentComponent } from './user/add-appointment/add-appointment.component';
 import { SignupComponent } from './signup/signup.component';
+import { TokenInterceptor } from './interceptor/token.interceptor';
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import { SignupComponent } from './signup/signup.component';
     DialogModule,
     ReactiveFormsModule 
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
