@@ -14,7 +14,6 @@ const routes: Routes = [
       { component: SignupComponent, path: "signup"},
     {component:AddAppointmentComponent,path:"addappointment"}]
       
-    
   },
   {
     component: AdminLayoutComponent, path: "admin", children: [
