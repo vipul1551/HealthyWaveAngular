@@ -8,6 +8,7 @@ import { HomeComponent } from './user/home/home.component';
 import { UserLayoutComponent } from './user/user-layout/user-layout.component';
 import { StaffLayoutComponent } from './staff/staff-layout/staff-layout.component';
 import { StaffDashboardComponent } from './staff/staff-dashboard/staff-dashboard.component';
+import { AppointmentListComponent } from './staff/appointment-list/appointment-list.component';
 const routes: Routes = [
   {
     component: UserLayoutComponent, path: "", children: [
@@ -20,7 +21,9 @@ const routes: Routes = [
   },
   {
     component:StaffLayoutComponent,path:"staff",children:[
-      { component: StaffDashboardComponent, path: "dashboard" }]
+      { component: StaffDashboardComponent, path: "dashboard" },
+      {component:AppointmentListComponent,path:"appointmentlist"}
+    ]
     
   },
   {

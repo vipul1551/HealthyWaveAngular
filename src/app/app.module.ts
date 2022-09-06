@@ -25,6 +25,7 @@ import { SignupComponent } from './signup/signup.component';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { StaffFooterComponent } from './staff/staff-footer/staff-footer.component';
 import { StaffHeaderComponent } from './staff/staff-header/staff-header.component';
+import { AppointmentListComponent } from './staff/appointment-list/appointment-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { StaffHeaderComponent } from './staff/staff-header/staff-header.componen
     SignupComponent,
     StaffFooterComponent,
     StaffHeaderComponent,
+    AppointmentListComponent,
     
   ],
   imports: [
