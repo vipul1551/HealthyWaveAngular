@@ -74,13 +74,13 @@
                       *ngIf="signupForm.get('contactNum')?.touched && signupForm.get('contactNum')?.hasError('required')">Please
                       Enter Contact</span>
                   </div>
-                  <div class="col-md-6"><label class="form-label" for="form2Example17">Role</label>
-                    <select class="form-select" aria-label="Default select example" formControlName="role">
+                  <div class="col-md-6" formGroupName = "role"><label class="form-label" for="form2Example17">Role</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="roleName">
                       <option selected disabled>Select Your Role</option>
                       <option value="doctor">Doctor</option>
                       <option value="staff">Staff</option>
                     </select>
-                    <span *ngIf="signupForm.get('role')?.touched && signupForm.get('role')?.hasError('required')">Please
+                    <span *ngIf="signupForm.get('roleName')?.touched && signupForm.get('roleName')?.hasError('required')">Please
                       Select Role</span>
                   </div>
                 </div>

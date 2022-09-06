@@ -21,24 +21,23 @@ export class SignupComponent implements OnInit {
       password : new FormControl('',[Validators.required]),
       gender : new FormControl('',[Validators.required]),
       contactNum : new FormControl('',[Validators.required]),
-      role : new FormControl('',[Validators.required]),
+      role : new FormGroup({
+        roleName : new FormControl('',[Validators.required])
+      }),
     })
   }
 
   ngOnInit(): void {
   }
 
-  addUser(){console.log(this.signupForm.value);
+  addUser(){
   
     this.sessionService.signupApi(this.signupForm.value).subscribe(resp =>{
     
-      this.toastr.success("Sign Up Done...")
-      this.toastr.success("Please Wait For Some Time ")
+      this.toastr.success(resp.msg)
       this.router.navigateByUrl("/login")
- 
-
   }, err => {
-    this.toastr.error(err)
+    this.toastr.error(err.error.msg)
   })
   }
 
