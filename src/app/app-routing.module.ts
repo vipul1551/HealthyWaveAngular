@@ -8,6 +8,8 @@ import { HomeComponent } from './user/home/home.component';
 import { UserLayoutComponent } from './user/user-layout/user-layout.component';
 import { StaffLayoutComponent } from './staff/staff-layout/staff-layout.component';
 import { StaffDashboardComponent } from './staff/staff-dashboard/staff-dashboard.component';
+import { DoctorDashboardComponent } from './doctor/doctor-dashboard/doctor-dashboard.component';
+import { DoctorLayoutComponent } from './doctor/doctor-layout/doctor-layout.component';
 const routes: Routes = [
   {
     component: UserLayoutComponent, path: "", children: [
@@ -16,6 +18,11 @@ const routes: Routes = [
       { component: SignupComponent, path: "signup"},
     {component:AddAppointmentComponent,path:"addappointment"}]
       
+    
+  },
+  {
+    component:DoctorLayoutComponent,path:"doctor",children:[
+      { component: DoctorDashboardComponent, path: "dashboard" }]
     
   },
   {
