@@ -20,4 +20,11 @@ export class SessionService {
   deleteAuthtokenApi(userId:any): Observable<any>{
     return this.http.post("http://localhost:9996/public/logout/"+userId,userId)
   }
+  emailVeryfyApi(email:any):Observable<any>{
+    return this.http.post("http://localhost:9996/public/sendotp", email)
+  }
+
+  verifyOtp(otp:any):Observable<any>{
+    return this.http.post("http://localhost:9996/public/verifyotp",otp)
+  }
 }

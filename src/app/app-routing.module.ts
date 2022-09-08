@@ -12,6 +12,8 @@ import { DoctorDashboardComponent } from './doctor/doctor-dashboard/doctor-dashb
 import { DoctorLayoutComponent } from './doctor/doctor-layout/doctor-layout.component';
 import { AppointmentListComponent } from './staff/appointment-list/appointment-list.component';
 import { LogoutComponent } from './logout/logout.component';
+import { VeryfyEmailComponent } from './user/veryfy-email/veryfy-email.component';
+import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component';
 const routes: Routes = [
   {
     component: UserLayoutComponent, path: "", children: [
@@ -19,10 +21,10 @@ const routes: Routes = [
       { component: LoginComponent, path: "login" },
       { component: SignupComponent, path: "signup"},
       {component:AddAppointmentComponent,path:"addappointment"},
-      { component: LogoutComponent, path: "logout" }
-    ]
-      
-    
+      { component: LogoutComponent, path: "logout" },
+      {component:VeryfyEmailComponent,path:"emailveryfy"},
+      {component:ForgotEmailComponent,path:"forgotemail"}]
+  
   },
   {
     component:DoctorLayoutComponent,path:"doctor",children:[

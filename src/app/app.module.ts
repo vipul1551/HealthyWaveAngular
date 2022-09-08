@@ -29,6 +29,8 @@ import { AppointmentListComponent } from './staff/appointment-list/appointment-l
 import { DoctorHeaderComponent } from './doctor/doctor-header/doctor-header.component';
 import { DoctorFooterComponent } from './doctor/doctor-footer/doctor-footer.component';
 import { LogoutComponent } from './logout/logout.component';
+import { VeryfyEmailComponent } from './user/veryfy-email/veryfy-email.component';
+import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +54,8 @@ import { LogoutComponent } from './logout/logout.component';
     DoctorHeaderComponent,
     DoctorFooterComponent,
     LogoutComponent,
+    VeryfyEmailComponent,
+    ForgotEmailComponent,
     
   ],
   imports: [

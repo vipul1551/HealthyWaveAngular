@@ -1,0 +1,75 @@
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <form class="php-email-form" [formGroup]="forgotForm" (ngSubmit)="verifyOTP()">
+
+                    <div class="row form-outline">
+                        <div class="col-md-5">
+                            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Forgot Password :</h5>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="d-flex align-items-center mb-3 pb-1">
+                                <span class="material-symbols-outlined">
+                                    heart_plus
+                                </span>
+                                <span class="h1 fw-bold mb-0">HEALTHYWAVE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example17">Enter OTP</label>
+                        <input type="text" formControlName="otp" class="form-control form-control-lg" />
+                        <span class="err"
+                            *ngIf="forgotForm.get('otp')?.touched && forgotForm.get('otp')?.hasError('required')">Plese
+                            Enter otp</span>
+                    </div>
+
+                    <div class="row form-outline mb-4">
+                        <div class="col-md-6">
+                            <div class="pt-1 mb-4">
+                                <button class="btn btn-dark btn-lg btn-block" style="width: 100%;"
+                                    type="submit" (click)="updatePasswordForm()">Check OTP</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<p-dialog header="Enter New Password"  [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width:'50vw'}" [(visible)]="display">
+    <form class="php-email-form" [formGroup]="updatePassForm" (ngSubmit)="updatePassword()">
+
+        <div class="row form-outline">
+            <div class="col-md-5">
+                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Forgot Password :</h5>
+            </div>
+            <div class="col-md-7">
+                <div class="d-flex align-items-center mb-3 pb-1">
+                    <span class="material-symbols-outlined">
+                        heart_plus
+                    </span>
+                    <span class="h1 fw-bold mb-0">HEALTHYWAVE</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example17">Enter Password</label>
+            <input type="text" formControlName="Password" class="form-control form-control-lg" />
+            <span class="err"
+                *ngIf="forgotForm.get('Password')?.touched && forgotForm.get('Password')?.hasError('required')">Plese
+                Enter Password</span>
+        </div>
+
+        <div class="row form-outline mb-4">
+            <div class="col-md-6">
+                <div class="pt-1 mb-4">
+                    <button class="btn btn-dark btn-lg btn-block" style="width: 100%;"
+                        type="submit">Update Password</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</p-dialog>
