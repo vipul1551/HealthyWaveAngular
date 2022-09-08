@@ -26,6 +26,9 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
 import { StaffFooterComponent } from './staff/staff-footer/staff-footer.component';
 import { StaffHeaderComponent } from './staff/staff-header/staff-header.component';
 import { AppointmentListComponent } from './staff/appointment-list/appointment-list.component';
+import { DoctorHeaderComponent } from './doctor/doctor-header/doctor-header.component';
+import { DoctorFooterComponent } from './doctor/doctor-footer/doctor-footer.component';
+import { LogoutComponent } from './logout/logout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +49,9 @@ import { AppointmentListComponent } from './staff/appointment-list/appointment-l
     StaffFooterComponent,
     StaffHeaderComponent,
     AppointmentListComponent,
+    DoctorHeaderComponent,
+    DoctorFooterComponent,
+    LogoutComponent,
     
   ],
   imports: [

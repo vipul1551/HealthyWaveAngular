@@ -25,21 +25,21 @@
                   <div class="col-md-4">
                     <input type="text" id="form2Example17" formControlName="firstName" class="form-control"
                       placeholder="First Name" />
-                    <span
+                    <span class="err"
                       *ngIf="signupForm.get('firstName')?.touched && signupForm.get('firstName')?.hasError('required')">Please
                       Enter First Name</span>
                   </div>
                   <div class="col-md-4">
                     <input type="text" id="form2Example17" formControlName="middleName" class="form-control"
                       placeholder="Middle Name" />
-                    <span
+                    <span class="err"
                       *ngIf="signupForm.get('middleName')?.touched && signupForm.get('middleName')?.hasError('required')">Please
                       Enter Middle Name</span>
                   </div>
                   <div class="col-md-4">
                     <input type="text" id="form2Example17" formControlName="lastName" class="form-control"
                       placeholder="Last Name" />
-                    <span
+                    <span class="err"
                       *ngIf="signupForm.get('lastName')?.touched && signupForm.get('lastName')?.hasError('required')">Please
                       Enter Last Name</span>
                   </div>
@@ -51,14 +51,14 @@
                   <div class="col-md-6"><label class="form-label" for="form2Example17">Email</label>
                     <input type="email" id="form2Example17" formControlName="email" class="form-control"
                       placeholder="Email" />
-                    <span
+                    <span class="err"
                       *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.hasError('required')">Please
                       Enter email</span>
                   </div>
                   <div class="col-md-6"><label class="form-label" for="form2Example17">Password</label>
                     <input type="password" id="form2Example17" formControlName="password" class="form-control"
                       placeholder="Password" />
-                    <span
+                    <span class="err"
                       *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.hasError('required')">Please
                       Enter Password</span>
                   </div>
@@ -68,7 +68,7 @@
                   <div class="col-md-6"><label class="form-label" for="form2Example17">Contact</label>
                     <input type="text" id="form2Example17" formControlName="contactNum" class="form-control"
                       placeholder="Contact Number" />
-                    <span
+                    <span class="err"
                       *ngIf="signupForm.get('contactNum')?.touched && signupForm.get('contactNum')?.hasError('required')">Please
                       Enter Contact</span>
                   </div>
@@ -78,6 +78,9 @@
                       <option value="doctor">Doctor</option>
                       <option value="staff">Staff</option>
                     </select>
+                    <span class="err"
+                      *ngIf="signupForm.get('role')?.touched && signupForm.get('role')?.hasError('required')">Please
+                      Select Role</span>
                   </div>
                 </div>
 
@@ -90,7 +93,7 @@
                           checked>Male</label>&nbsp;&nbsp;&nbsp;&nbsp;
                       <label><input type="radio" name="gender" formControlName="gender" value="female">Female</label>
                     </div>
-                    <span
+                    <span class="err"
                       *ngIf="signupForm.get('gender')?.touched && signupForm.get('gender')?.hasError('required')">Plese
                       Select Gender</span>
                   </div>

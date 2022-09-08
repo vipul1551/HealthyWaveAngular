@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthTokenService {
 
-   authToken:String = ""
-   userId: any ="" 
+  authToken:String = ""
+  userId: any ="" 
   constructor() { }
 }

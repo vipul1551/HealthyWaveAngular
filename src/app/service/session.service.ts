@@ -16,4 +16,8 @@ export class SessionService {
   signupApi(user: any): Observable<any> {
     return this.http.post("http://localhost:9996/public/signup", user)
   }
+
+  deleteAuthtokenApi(userId:any): Observable<any>{
+    return this.http.post("http://localhost:9996/public/logout/"+userId,userId)
+  }
 }

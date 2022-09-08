@@ -42,10 +42,10 @@ export class LoginComponent implements OnInit {
       this.authTokenService.userId = resp.data.userId 
       
       if (resp.data.role.roleName == "staff") {
-        console.log(resp);
+        console.log(resp.data.role.roleName);
         
         this.toastr.success(resp.msg)
-        this.router.navigateByUrl("staff")
+        this.router.navigateByUrl("/staff/dashboard")
       } else if (resp.data.role.roleName == "doctor") {
         this.toastr.success(resp.msg)
         this.router.navigateByUrl("/doctor/dashboard")
