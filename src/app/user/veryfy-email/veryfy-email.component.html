@@ -1,0 +1,45 @@
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <form class="php-email-form" [formGroup]="emailForm" (ngSubmit)="veryfyEmail()">
+
+                    <div class="row form-outline">
+                        <div class="col-md-5">
+                            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Forgot Password :</h5>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="d-flex align-items-center mb-3 pb-1">
+                                <span class="material-symbols-outlined">
+                                    heart_plus
+                                </span>
+                                <span class="h1 fw-bold mb-0">HEALTHYWAVE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example17">Email address</label>
+                        <input type="email" formControlName="email" class="form-control form-control-lg" />
+                        <span class="err"
+                            *ngIf="emailForm.get('email')?.touched && emailForm.get('email')?.hasError('required')">Plese
+                            Enter Email</span>
+                    </div>
+
+                    <div class="row form-outline mb-4">
+                        <div class="col-md-6">
+                            <p class="mb-5 pb-lg-2" style="color: #58046b;">Don't have an account? <a
+                                    routerLink="/signup" style="color: darkcyan;">Register here</a></p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="pt-1 mb-4">
+                                <button class="btn btn-dark btn-lg btn-block" style="width: 100%;"
+                                    type="submit">Send Email</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

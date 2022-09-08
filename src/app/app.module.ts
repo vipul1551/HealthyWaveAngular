@@ -26,6 +26,8 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
 import { StaffFooterComponent } from './staff/staff-footer/staff-footer.component';
 import { StaffHeaderComponent } from './staff/staff-header/staff-header.component';
 import { AppointmentListComponent } from './staff/appointment-list/appointment-list.component';
+import { VeryfyEmailComponent } from './user/veryfy-email/veryfy-email.component';
+import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,8 @@ import { AppointmentListComponent } from './staff/appointment-list/appointment-l
     StaffFooterComponent,
     StaffHeaderComponent,
     AppointmentListComponent,
+    VeryfyEmailComponent,
+    ForgotEmailComponent,
     
   ],
   imports: [

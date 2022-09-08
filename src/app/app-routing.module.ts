@@ -11,13 +11,17 @@ import { StaffDashboardComponent } from './staff/staff-dashboard/staff-dashboard
 import { DoctorDashboardComponent } from './doctor/doctor-dashboard/doctor-dashboard.component';
 import { DoctorLayoutComponent } from './doctor/doctor-layout/doctor-layout.component';
 import { AppointmentListComponent } from './staff/appointment-list/appointment-list.component';
+import { VeryfyEmailComponent } from './user/veryfy-email/veryfy-email.component';
+import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component';
 const routes: Routes = [
   {
     component: UserLayoutComponent, path: "", children: [
       { component: HomeComponent, path: "" },
       { component: LoginComponent, path: "login" },
       { component: SignupComponent, path: "signup"},
-    {component:AddAppointmentComponent,path:"addappointment"}]
+    {component:AddAppointmentComponent,path:"addappointment"},
+  {component:VeryfyEmailComponent,path:"emailveryfy"},
+{component:ForgotEmailComponent,path:"forgotemail"}]
       
     
   },
