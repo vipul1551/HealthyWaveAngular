@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { ForgetPasswordService } from 'src/app/service/forget-password.service';
 import { SessionService } from 'src/app/service/session.service';
 
 @Component({
