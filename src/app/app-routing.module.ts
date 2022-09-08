@@ -11,10 +11,7 @@ import { StaffDashboardComponent } from './staff/staff-dashboard/staff-dashboard
 import { DoctorDashboardComponent } from './doctor/doctor-dashboard/doctor-dashboard.component';
 import { DoctorLayoutComponent } from './doctor/doctor-layout/doctor-layout.component';
 import { AppointmentListComponent } from './staff/appointment-list/appointment-list.component';
-<<<<<<< HEAD
-=======
 import { LogoutComponent } from './logout/logout.component';
->>>>>>> 50bbb59f27a6a3b9757fde343d4623c4b95774a8
 import { VeryfyEmailComponent } from './user/veryfy-email/veryfy-email.component';
 import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component';
 const routes: Routes = [
@@ -23,19 +20,11 @@ const routes: Routes = [
       { component: HomeComponent, path: "" },
       { component: LoginComponent, path: "login" },
       { component: SignupComponent, path: "signup"},
-<<<<<<< HEAD
-    {component:AddAppointmentComponent,path:"addappointment"},
-  {component:VeryfyEmailComponent,path:"emailveryfy"},
-{component:ForgotEmailComponent,path:"forgotemail"}]
-      
-    
-=======
       {component:AddAppointmentComponent,path:"addappointment"},
       { component: LogoutComponent, path: "logout" },
       {component:VeryfyEmailComponent,path:"emailveryfy"},
       {component:ForgotEmailComponent,path:"forgotemail"}]
   
->>>>>>> 50bbb59f27a6a3b9757fde343d4623c4b95774a8
   },
   {
     component:DoctorLayoutComponent,path:"doctor",children:[

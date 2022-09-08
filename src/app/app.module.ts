@@ -26,12 +26,9 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
 import { StaffFooterComponent } from './staff/staff-footer/staff-footer.component';
 import { StaffHeaderComponent } from './staff/staff-header/staff-header.component';
 import { AppointmentListComponent } from './staff/appointment-list/appointment-list.component';
-<<<<<<< HEAD
-=======
 import { DoctorHeaderComponent } from './doctor/doctor-header/doctor-header.component';
 import { DoctorFooterComponent } from './doctor/doctor-footer/doctor-footer.component';
 import { LogoutComponent } from './logout/logout.component';
->>>>>>> 50bbb59f27a6a3b9757fde343d4623c4b95774a8
 import { VeryfyEmailComponent } from './user/veryfy-email/veryfy-email.component';
 import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component';
 @NgModule({
@@ -54,12 +51,9 @@ import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component
     StaffFooterComponent,
     StaffHeaderComponent,
     AppointmentListComponent,
-<<<<<<< HEAD
-=======
     DoctorHeaderComponent,
     DoctorFooterComponent,
     LogoutComponent,
->>>>>>> 50bbb59f27a6a3b9757fde343d4623c4b95774a8
     VeryfyEmailComponent,
     ForgotEmailComponent,
     
