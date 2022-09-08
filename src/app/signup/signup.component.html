@@ -1,12 +1,10 @@
-<section class="vh-100" style="background-color: white;">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-xl-10">
-        <div class="card" style="border-radius: 1rem;">
-          <div class="row g-0">
-            <div class="card-body p-4 p-lg-6 text-black">
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
 
-              <form [formGroup]="signupForm" (ngSubmit)="addUser()">
+              <form class="php-email-form" [formGroup]="signupForm" (ngSubmit)="addUser()">
 
                 <div class="row form-outline ">
                   <div class="col-md-8">
@@ -80,8 +78,6 @@
                       <option value="doctor">Doctor</option>
                       <option value="staff">Staff</option>
                     </select>
-                    <span *ngIf="signupForm.get('roleName')?.touched && signupForm.get('roleName')?.hasError('required')">Please
-                      Select Role</span>
                   </div>
                 </div>
 
@@ -111,7 +107,9 @@
                   </div>
                 </div>
               </form>
+</div></div></div></section>
 
+              <!-- 
             </div>
           </div>
         </div>
@@ -120,4 +118,4 @@
   </div>
 </section>
 
-<br><br><br><br>
+<br><br><br><br> -->
