@@ -21,17 +21,17 @@
           <div class="form-outline mb-4">
             <label class="form-label" for="form2Example17">Email address</label>
             <input type="email" formControlName="email" class="form-control form-control-lg" />
-            <span class="err" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')">Plese
+            <span class="err" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')">Please
               Enter Email</span>
           </div>
 
           <div class="form-outline mb-4">
             <label class="form-label" for="form2Example27">Password</label>
             <input type="password" formControlName="password" class="form-control form-control-lg" />
-            <span class="err" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')">Plese
+            <span class="err" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')">Please
               Enter Password</span>
             <span class="err" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('minlength')">Password
-              length 8 characters required</span>
+              length must be 8 characters long</span>
           </div>
 
           <div class="row form-outline mb-4">
