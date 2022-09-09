@@ -27,4 +27,8 @@ export class SessionService {
   verifyOtp(otp:any):Observable<any>{
     return this.http.post("http://localhost:9996/public/verifyotp",otp)
   }
+
+  updatePassword(user:any):Observable<any>{
+    return this.http.put("http://localhost:9996/public/updatepassword",user)
+  }
 }

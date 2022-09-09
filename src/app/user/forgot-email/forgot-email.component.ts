@@ -1,3 +1,4 @@
+import { getLocaleMonthNames } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -22,7 +23,7 @@ export class ForgotEmailComponent implements OnInit {
       email:new FormControl()
     })
     this.updatePassForm = new FormGroup({
-      Password:new FormControl('',[Validators.required]),
+      password:new FormControl('',[Validators.required]),
       email:new FormControl()
     })
     this.updatePassForm.controls['email'].setValue(localStorage.getItem("email"))
@@ -53,14 +54,15 @@ export class ForgotEmailComponent implements OnInit {
      if(this.updatePassForm.valid == false){
       this.toastr.error("Please Enter Password")
     }else{
-  //     this.sessionService.verifyOtp(this.updatePassForm.value).subscribe(res =>{
+      this.sessionService.updatePassword(this.updatePassForm.value).subscribe(res =>{
+       console.log(res);
        
-  //       this.toastr.success("password update successfully...")
-  //       this.router.navigateByUrl("login")
-  //   }
-  //  ,err =>{
+        this.toastr.success("password update successfully...")
+        this.router.navigateByUrl("login")
+    }
+   ,err =>{
 
-  //   })
+    })
   }
     
   }
