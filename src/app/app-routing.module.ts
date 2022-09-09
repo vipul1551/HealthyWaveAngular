@@ -43,7 +43,7 @@ const routes: Routes = [
   },
   {
     component: AdminLayoutComponent, path: "admin", children: [
-      // { component: HomeComponent, path: "" },
+      { component: HomeComponent, path: "" },
     ]
     
   }
