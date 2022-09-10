@@ -25,8 +25,7 @@ export class AppointmentListComponent implements OnInit {
   gender:String=""
   dateTime:String=""
   reason:String=""
-  submitted: boolean=false;
-  productDialog: boolean =false;
+  isApproved:Boolean=false
   constructor(private appointmentService:AppointmentServiceService,private toastr:ToastrService) { }
 
   ngOnInit(): void {
@@ -41,9 +40,22 @@ export class AppointmentListComponent implements OnInit {
     })
   }
 
-  openNew() {
-    this.submitted = false;
-    this.productDialog = true;
-}
+  approveAppointment(id:any){console.log(id);
+  
+    this.appointmentService.approveAppointment(id).subscribe(resp=>{
+      this.toastr.success(resp)
+      console.log(resp);
+      
+      this.appointments = this.appointments.filter(a => a.appointmentId != id)
+    },err=>{
+      console.log(err);
+      this.toastr.error(err)
+    })
+
+  }
+
+  declineAppointment(id:any){
+    
+  }
 
 }

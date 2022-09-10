@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
 
 
 <div class="container-fluid">
@@ -16,7 +16,8 @@
                 <th scope="col">Relative Mobile No.</th>
                 <th scope="col">Date Time</th>
                 <th scope="col">Symptoms</th>
-                <th scope="col">isApproved</th>
+                <th scope="col">Approved</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -29,19 +30,8 @@
                 <td>{{a.patientRelativeContact}}</td>
                 <td>{{a.dateTime}}</td>
                 <td>{{a.reason}}</td>
-                <td><input type="text" [(ngModel)]="submitted" disabled class="form-control input-sm"/></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+                <td>{{a.isApproved}}</td>
+                <td><button class="btn btn-success" (click)="approveAppointment(a.appointmentId)"><i class="fa fa-check" aria-hidden="true"></i></button>&nbsp;<button class="btn btn-danger" (click)="declineAppointment(a.appointmentId)"><i class="fa fa-close" aria-hidden="true"></i></button></td>
             </tr>
         </tbody>
     </table>

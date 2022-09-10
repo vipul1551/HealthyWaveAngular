@@ -12,4 +12,10 @@ export class AppointmentServiceService {
   appointmentList():Observable<any>{
     return this.http.get("http://localhost:9996/staff/appointment")
   }
+  approveAppointment(id:any):Observable<any>{
+    return this.http.delete("http://localhost:9996/appointment/approve/"+id)
+  }
+  declineAppointment(id:any):Observable<any>{
+    return this.http.delete("http://localhost:9996/appointment/decline/"+id)
+  }
 }
