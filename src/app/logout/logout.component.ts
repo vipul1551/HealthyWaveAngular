@@ -15,12 +15,9 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.authtokenService.authToken = ""
-    this.sessionService.deleteAuthtokenApi(this.authtokenService.userId).subscribe(resp=>{
-      this.router.navigateByUrl("")
-      this.toastr.success("Logged Successfully")
-    },err=>{
-      this.toastr.error("Something went wrong")
-    });
+   
+      this.router.navigateByUrl("/login")
+      this.toastr.success("Logout Successfully")
   }
 
 }

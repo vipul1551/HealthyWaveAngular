@@ -15,6 +15,7 @@ import { AppointmentServiceService } from 'src/app/service/appointment-service.s
 })
 export class AppointmentListComponent implements OnInit {
   appointments: Array<any> = []
+  appointment: any = ""
   appointmentId: String = ""
   caseNumber: String = ""
   patientName: String = ""
@@ -40,14 +41,27 @@ export class AppointmentListComponent implements OnInit {
     })
   }
 
-  approveAppointment(id: any) {
-    console.log(id);
+  getById(id:any){
+    this.appointmentService.appointmentById(id).subscribe(res => {
+      console.log("res of get by appointment Id");
+      console.log(res.data);
+      this.appointment = res.data
+      console.log(this.appointment);
+      this.approveAppointment(this.appointment)
+     
+    },err =>{
 
-    this.appointmentService.approveAppointment(id).subscribe(resp => {
-      this.toastr.success(resp)
+    })
+  }
+
+  approveAppointment(appointment: any) {
+    this.appointmentService.approveAppointment(appointment).subscribe(resp => {
+      this.toastr.success(resp.msg)
       console.log(resp);
-
-      this.appointments = this.appointments.filter(a => a.appointmentId != id)
+ this.appointmentService.appointmentList().subscribe(res => {
+        this.appointments = res.data
+      })
+      // this.appointments = this.appointments.filter(a => a.appointmentId != id)
     }, err => {
       console.log(err);
       this.toastr.error(err)
