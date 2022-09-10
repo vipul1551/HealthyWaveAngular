@@ -15,7 +15,7 @@ export class TokenGuard implements CanActivate {
     console.log("authTokenGuard call...");
     if(this.authTokenService.authToken == undefined || this.authTokenService.authToken == ""){
       this.router.navigateByUrl("/login")
-      this.toastr.success("Please Login First")
+      this.toastr.success("Please Login Again")
     }
     
       return true;

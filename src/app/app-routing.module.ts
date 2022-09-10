@@ -16,6 +16,7 @@ import { VeryfyEmailComponent } from './user/veryfy-email/veryfy-email.component
 import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component';
 import { TokenGuard } from './guard/token.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 const routes: Routes = [
   
   { component: LoginComponent, path: "login" },
@@ -45,7 +46,7 @@ const routes: Routes = [
   },
   {
     component: AdminLayoutComponent, path: "admin", children: [
-      { component: HomeComponent, path: "" },
+      { component: AdminDashboardComponent, path: "" },
     ]
     
   },

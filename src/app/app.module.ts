@@ -32,6 +32,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { VeryfyEmailComponent } from './user/veryfy-email/veryfy-email.component';
 import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AdminFooterComponent } from './admin/admin-footer/admin-footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     VeryfyEmailComponent,
     ForgotEmailComponent,
     PageNotFoundComponent,
+    AdminFooterComponent,
     
   ],
   imports: [
@@ -65,7 +67,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
     HttpClientModule,
     DialogModule,
     ReactiveFormsModule,

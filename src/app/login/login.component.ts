@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl("/doctor/dashboard")
       }else if (resp.data.role.roleName == "admin") {
         this.toastr.success(resp.msg)
-        this.router.navigateByUrl("/dashboard")
+        this.router.navigateByUrl("/admin")
       }
 
     }, err => {console.log(err.error.msg);
