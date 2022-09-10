@@ -15,22 +15,22 @@ import { AppointmentServiceService } from 'src/app/service/appointment-service.s
 `],
 })
 export class AppointmentListComponent implements OnInit {
-  appointments:Array<any> = []
-  appointmentId :String=""
-  caseNumber:String=""
-  patientName:String=""
-  contact:String=""
-  email:String=""
-  patientRelativeName:String=""
-  patientRelativeContact:String=""
-  gender:String=""
-  dateTime:String=""
-  reason:String=""
-  isApproved:Boolean=false
-  constructor(private appointmentService:AppointmentServiceService,private toastr:ToastrService,private router:Router) { }
+  appointments: Array<any> = []
+  appointmentId: String = ""
+  caseNumber: String = ""
+  patientName: String = ""
+  contact: String = ""
+  email: String = ""
+  patientRelativeName: String = ""
+  patientRelativeContact: String = ""
+  gender: String = ""
+  dateTime: String = ""
+  reason: String = ""
+  isApproved: Boolean = false
+  constructor(private appointmentService: AppointmentServiceService, private toastr: ToastrService,private router:Router) { }
 
   ngOnInit(): void {
-    this.appointmentService.appointmentList().subscribe(res=>{
+    this.appointmentService.appointmentList().subscribe(res => {
       this.appointments = res.data
       this.router.navigateByUrl("/staff/appointmentlist")
     },err =>{

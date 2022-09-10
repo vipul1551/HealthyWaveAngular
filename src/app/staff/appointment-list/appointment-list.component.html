@@ -3,37 +3,41 @@
     <div class="col-md-10">
 
 
-<div class="container-fluid">
-    <div class="table-responsive card">
-    <table class="table   table-striped table-sm">
-        <thead>
-            <tr>
-                <th scope="col">Case Number</th>
-                <th scope="col">Patient Name</th>
-                <th scope="col">Mobile No.</th>
-                <th scope="col">Email</th>
-                <th scope="col">Relative Name</th>
-                <th scope="col">Relative Mobile No.</th>
-                <th scope="col">Date Time</th>
-                <th scope="col">Symptoms</th>
-                <th scope="col">Approved</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let a of appointments">
-                <th scope="row">{{a.caseNumber}}</th>
-                <td>{{a.patientName}}</td>
-                <td>{{a.contact}}</td>
-                <td>{{a.email}}</td>
-                <td>{{a.patientRelativeName}}</td>
-                <td>{{a.patientRelativeContact}}</td>
-                <td>{{a.dateTime}}</td>
-                <td>{{a.reason}}</td>
-                <td>{{a.isApproved}}</td>
-                <td><button class="btn btn-success" (click)="approveAppointment(a.appointmentId)"><i class="fa fa-check" aria-hidden="true"></i></button>&nbsp;<button class="btn btn-danger" (click)="declineAppointment(a.appointmentId)"><i class="fa fa-close" aria-hidden="true"></i></button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</div></div>
+        <div class="container-fluid">
+            <div class="table-responsive card">
+                <table class="table   table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">CaseNumber</th>
+                            <th scope="col">PatientName</th>
+                            <th scope="col">Mobile No.</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Relative Name</th>
+                            <th scope="col">Relative Mobile No.</th>
+                            <th scope="col">Date Time</th>
+                            <th scope="col">Symptoms</th>
+                            <th scope="col">Approved</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let a of appointments">
+                            <th scope="row">{{a.caseNumber}}</th>
+                            <td>{{a.patientName}}</td>
+                            <td>{{a.contact}}</td>
+                            <td>{{a.email}}</td>
+                            <td>{{a.patientRelativeName}}</td>
+                            <td>{{a.patientRelativeContact}}</td>
+                            <td>{{a.dateTime}}</td>
+                            <td>{{a.reason}}</td>
+                            <td>{{a.isApproved}}</td>
+                            <td><button class="btn btn-success" (click)="approveAppointment(a.appointmentId)"><i
+                                        class="fa fa-check" aria-hidden="true"></i></button>&nbsp;<button
+                                    class="btn btn-danger" (click)="declineAppointment(a.appointmentId)"><i
+                                        class="fa fa-close" aria-hidden="true"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
