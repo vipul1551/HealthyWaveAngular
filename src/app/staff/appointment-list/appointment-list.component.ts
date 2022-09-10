@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AppointmentServiceService } from 'src/app/service/appointment-service.service';
 
@@ -26,36 +27,42 @@ export class AppointmentListComponent implements OnInit {
   dateTime:String=""
   reason:String=""
   isApproved:Boolean=false
-  constructor(private appointmentService:AppointmentServiceService,private toastr:ToastrService) { }
+  constructor(private appointmentService:AppointmentServiceService,private toastr:ToastrService,private router:Router) { }
 
   ngOnInit(): void {
     this.appointmentService.appointmentList().subscribe(res=>{
       this.appointments = res.data
-      console.log(this.appointments);
-      
-      console.log(res ,"appointmentList...");
-      
+      this.router.navigateByUrl("/staff/appointmentlist")
     },err =>{
 
     })
   }
 
-  approveAppointment(id:any){console.log(id);
+  approveAppointment(id:any){
   
     this.appointmentService.approveAppointment(id).subscribe(resp=>{
-      this.toastr.success(resp)
-      console.log(resp);
+      this.toastr.success(resp.msg)
       
-      this.appointments = this.appointments.filter(a => a.appointmentId != id)
+      this.router.navigateByUrl("/staff/appointmentlist")
+      // this.appointments = this.appointments.filter(a => a.appointmentId != id)
     },err=>{
-      console.log(err);
-      this.toastr.error(err)
+      this.toastr.error(err.msg)
     })
 
   }
 
   declineAppointment(id:any){
-    
+  
+    this.appointmentService.declineAppointment(id).subscribe(resp=>{
+      this.toastr.success(resp.msg)
+      console.log(resp);console.log("ID is :"+id);
+      this.router.navigateByUrl("staff/appointmentlist")
+      // this.appointments = this.appointments.filter(a => a.appointmentId != id)
+    },err=>{
+      this.toastr.error(err.msg);
+      
+    })
+
   }
 
 }

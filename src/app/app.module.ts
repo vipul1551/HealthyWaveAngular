@@ -31,6 +31,7 @@ import { DoctorFooterComponent } from './doctor/doctor-footer/doctor-footer.comp
 import { LogoutComponent } from './logout/logout.component';
 import { VeryfyEmailComponent } from './user/veryfy-email/veryfy-email.component';
 import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +57,7 @@ import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component
     LogoutComponent,
     VeryfyEmailComponent,
     ForgotEmailComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [

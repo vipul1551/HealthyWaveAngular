@@ -15,10 +15,12 @@ import { LogoutComponent } from './logout/logout.component';
 import { VeryfyEmailComponent } from './user/veryfy-email/veryfy-email.component';
 import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component';
 import { TokenGuard } from './guard/token.guard';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 const routes: Routes = [
   
   { component: LoginComponent, path: "login" },
   { component: SignupComponent, path: "signup"},
+  
   {
     component: UserLayoutComponent, path: "", children: [
       { component: HomeComponent, path: "" },
@@ -46,7 +48,8 @@ const routes: Routes = [
       { component: HomeComponent, path: "" },
     ]
     
-  }
+  },
+  {component: PageNotFoundComponent, path: "**"}
 ];
 
 @NgModule({
