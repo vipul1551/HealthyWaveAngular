@@ -1,53 +1,68 @@
-<section id="contact" class="contact">
-  <div class="container">
-    <div class="row mt-5">
-      <div class="col-lg-3"></div>
-      <div class="col-lg-6">
-        <form class="php-email-form" [formGroup]="loginForm" (ngSubmit)="authenticate()">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
 
-          <div class="row form-outline">
-            <div class="col-md-5">
-              <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">LOGIN</h5>
-            </div>
-            <div class="col-md-7">
-              <div class="d-flex align-items-center mb-3 pb-1">
-                <span class="material-symbols-outlined">
-                  heart_plus
-                </span>
-                <span class="h1 fw-bold mb-0">HEALTHYWAVE</span>
+</head>
+<body>
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="row mt-0">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+          <form class="php-email-form" [formGroup]="loginForm" (ngSubmit)="authenticate()">
+  
+            <div class="row form-outline">
+              <div class="col-md-5">
+                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">LOGIN</h5>
+              </div>
+              <div class="col-md-7">
+                <div class="d-flex align-items-center mb-3 pb-1">
+                  <span class="material-symbols-outlined">
+                    heart_plus
+                  </span>
+                  <span class="h1 fw-bold mb-0">HEALTHYWAVE</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="form-outline mb-4">
-            <label class="form-label" for="form2Example17">Email address</label>
-            <input type="email" formControlName="email" class="form-control form-control-lg" />
-            <span class="err" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')">Please
-              Enter Email</span>
-          </div>
-
-          <div class="form-outline mb-4">
-            <label class="form-label" for="form2Example27">Password</label>
-            <input type="password" formControlName="password" class="form-control form-control-lg" />
-            <span class="err" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')">Please
-              Enter Password</span>
-            <span class="err" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('minlength')">Password
-              length must be 8 characters long</span>
-          </div>
-
-          <div class="row form-outline mb-4">
-            <div class="col-md-6">
-              <a class="small text-danger" routerLink="/emailveryfy">Forgot password?</a>
-              <p class="mb-5 pb-lg-2" style="color: #58046b;">Don't have an account? <a routerLink="/signup"
-                  style="color: darkcyan;">Register here</a></p>
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example17">Email address</label>
+              <input type="email" formControlName="email" class="form-control form-control-lg" />
+              <span class="err" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')">Please
+                Enter Email</span>
             </div>
-            <div class="col-md-6">
-              <div class="pt-1 mb-4">
-                <button class="btn btn-dark btn-lg btn-block" style="width: 100%;" type="submit">Login</button>
+  
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example27">Password</label>
+              <input type="password" formControlName="password" class="form-control form-control-lg" />
+              <span class="err" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')">Please
+                Enter Password</span>
+              <span class="err" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('minlength')">Password
+                length must be 8 characters long</span>
+            </div>
+  
+            <div class="row form-outline mb-4">
+              <div class="col-md-6">
+                <a class="small text-danger" routerLink="/emailveryfy">Forgot password?</a>
+                <p class="mb-5 pb-lg-2" style="color: #58046b;">Don't have an account? <a routerLink="/signup"
+                    style="color: darkcyan;">Register here</a></p>
+              </div>
+              <div class="col-md-6">
+                <div class="pt-1 mb-4">
+                  <button class="btn btn-dark btn-lg btn-block" style="width: 100%;" type="submit">Login</button>
+                </div>
               </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</body>
+</html>
+
