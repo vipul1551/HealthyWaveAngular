@@ -44,7 +44,6 @@ export class AppointmentListComponent implements OnInit {
       this.toastr.success(resp.msg)
       
       this.router.navigateByUrl("/staff/appointmentlist")
-      // this.appointments = this.appointments.filter(a => a.appointmentId != id)
     },err=>{
       this.toastr.error(err.msg)
     })
@@ -57,7 +56,6 @@ export class AppointmentListComponent implements OnInit {
       this.toastr.success(resp.msg)
       console.log(resp);console.log("ID is :"+id);
       this.router.navigateByUrl("staff/appointmentlist")
-      // this.appointments = this.appointments.filter(a => a.appointmentId != id)
     },err=>{
       this.toastr.error(err.msg);
       
