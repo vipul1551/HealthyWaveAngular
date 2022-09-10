@@ -52,18 +52,7 @@ export class AppointmentListComponent implements OnInit {
     })
   }
 
-  getById(id:any){
-    this.appointmentService.appointmentById(id).subscribe(res => {
-      console.log("res of get by appointment Id");
-      console.log(res.data);
-      this.appointment = res.data
-      console.log(this.appointment);
-      this.approveAppointment(this.appointment)
-     
-    },err =>{
-
-    })
-  }
+ 
 
   approveAppointment(appointment: any) {
     this.appointmentService.approveAppointment(appointment).subscribe(resp => {
