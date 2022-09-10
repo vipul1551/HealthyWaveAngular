@@ -13,9 +13,9 @@ export class AppointmentServiceService {
     return this.http.get("http://localhost:9996/staff/appointment")
   }
   approveAppointment(id:any):Observable<any>{
-    return this.http.delete("http://localhost:9996/appointment/approve/"+id)
+    return this.http.get("http://localhost:9996/staff/approveappointment/"+id)
   }
   declineAppointment(id:any):Observable<any>{
-    return this.http.delete("http://localhost:9996/appointment/decline/"+id)
+    return this.http.get("http://localhost:9996/staff/declineappointment/"+id)
   }
 }
