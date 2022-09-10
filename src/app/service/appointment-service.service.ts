@@ -20,6 +20,6 @@ export class AppointmentServiceService {
     return this.http.put("http://localhost:9996/staff/approveappointment",appointment)
   }
   declineAppointment(id:any):Observable<any>{
-    return this.http.get("http://localhost:9996/staff/declineappointment/"+id)
+    return this.http.put("http://localhost:9996/staff/declineappointment/"+id,id)
   }
 }
