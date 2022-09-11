@@ -20,7 +20,9 @@ export class AddAppointmentComponent implements OnInit {
       patientRelativeName: new FormControl('', [Validators.required]),
       patientRelativeContact: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
-      reason: new FormControl('', [Validators.required])
+      reason: new FormControl('', [Validators.required]),
+      dateTime: new FormControl('', [Validators.required]),
+      slot: new FormControl('', [Validators.required])
     })
   }
 
