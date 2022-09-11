@@ -17,6 +17,7 @@ import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component
 import { TokenGuard } from './guard/token.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AddPatientComponent } from './staff/add-patient/add-patient.component';
 const routes: Routes = [
   
   { component: LoginComponent, path: "login" },
@@ -40,7 +41,8 @@ const routes: Routes = [
   {
     component:StaffLayoutComponent,path:"staff",children:[
       { component: StaffDashboardComponent, path: "dashboard" },
-      {component:AppointmentListComponent,path:"appointmentlist"}
+      {component:AppointmentListComponent,path:"appointmentlist"},
+      { component:AddPatientComponent,path:"addpatient"}
     ],canActivate:[TokenGuard]
     
   },

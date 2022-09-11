@@ -33,6 +33,7 @@ import { VeryfyEmailComponent } from './user/veryfy-email/veryfy-email.component
 import { ForgotEmailComponent } from './user/forgot-email/forgot-email.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminFooterComponent } from './admin/admin-footer/admin-footer.component';
+import { AddPatientComponent } from './staff/add-patient/add-patient.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +61,7 @@ import { AdminFooterComponent } from './admin/admin-footer/admin-footer.componen
     ForgotEmailComponent,
     PageNotFoundComponent,
     AdminFooterComponent,
+    AddPatientComponent,
     
   ],
   imports: [

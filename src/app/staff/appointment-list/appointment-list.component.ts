@@ -100,8 +100,8 @@ export class AppointmentListComponent implements OnInit {
         }
       })
     }, err => {
-      console.log(err);
-      this.toastr.error(err)
+      console.log(err.msg);
+      this.toastr.error(err.msg)
     })
   }
 
