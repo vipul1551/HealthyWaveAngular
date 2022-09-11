@@ -48,76 +48,82 @@
                         </div>
                     </div>
 
-
-                    <label class="form-label" for="form2Example17">Patient
-                        Relative Details :</label>
-                    <div class="row form-outline mb-4">
-                        <div class="col-md-6">
-                            <input type="email" id="form2Example17" formControlName="patientRelativeName"
-                                class="form-control" placeholder="Patient Relative Name" />
-                            <span
-                                *ngIf="appointmentForm.get('patientRelativeName')?.touched && appointmentForm.get('patientRelativeName')?.hasError('required')">Please
-                                Enter Patient Relative Name</span>
+                    <div class="row form-outline mb-4">   
+                        <div class="col-md-4">
+                            <label class="form-label" for="form2Example17">Address</label>
+                            <input type="text" id="form2Example17" formControlName="dob" class="form-control" placeholder="House Number, Street name" />
+                            <!-- <span
+                                                    *ngIf="appointmentForm.get('email')?.touched && appointmentForm.get('email')?.hasError('required')">Please
+                                                    Enter Email</span> -->
                         </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="form2Example17">State</label>
+                            <select class="form-select" aria-label="Default select example" (change)="getCityByState($event)" formControlName="state">
+                                <!-- <option selected disabled [ngValue]=""></option>Select State</option>  -->
+                                <option *ngFor="let s of states" value="{{s.stateId}}" >{{s.stateName}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="form2Example17">City</label>
+                            <select class="form-select" aria-label="Default select example" formControlName="city">
+                                <option selected disabled>Select City</option>
+                                <option *ngFor="let c of cities" value="{{c.cityId}}">{{c.cityName}}</option>
+                                <!--<option value="staff">Staff</option> -->
+                            </select>
+                        </div>
+                    </div>    
 
-
-                        <div class="col-md-6">
-                            <input type="text" id="form2Example17" formControlName="patientRelativeContact"
-                                class="form-control" placeholder="Patient Relative Contact Number" />
+                    <div class="row form-outline mb-4">
+                        <div class="col-md-4">
+                            <label class="form-label" for="form2Example17">Doctor</label>
+                            <select class="form-select" formControlName="doctor" (change)="getDoctorId($event)">
+                                <option selected disabled value="">Select Doctor</option>
+                                <option *ngFor="let d of doctors" value="{{d.doctorId}}">Dr. {{d.user.firstName|uppercase}} {{d.user.lastName|uppercase}} - {{d.specialization.spcialization}}</option>
+                                <!-- <option value="staff">Staff</option> -->
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="form2Example17">Date</label>
+                            <input type="date" value="yyyy-mm-dd" (change)="getSlotByDateDoctor($event)" id="form2Example17" formControlName="date"
+                                class="form-control" />
                             <span
-                                *ngIf="appointmentForm.get('patientRelativeContact')?.touched && appointmentForm.get('patientRelativeContact')?.hasError('required')">Please
-                                Enter Relative Contact Number</span>
+                                *ngIf="appointmentForm.get('date')?.touched && appointmentForm.get('date')?.hasError('required')">Please
+                                select Date </span>
+
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="form2Example17">Slot</label>
+                            <select class="form-select" formControlName="time">
+                                <option value="" disabled selected>Select Slot</option>
+                                <option value="10:00 - 10:30">10:00 - 10:30</option>
+                                <option value="10:30 - 11:00">10:30 - 11:00</option>
+                                <option value="11:00 - 11:30">11:00 - 11:30</option>
+                                <option value="11:30 - 12:00">11:30 - 12:00</option>
+                                <option value="12:00 - 12:30">12:00 - 12:30</option>
+                                <option value="12:30 - 01:00">12:30 - 01:00</option>
+                                <!-- <option class="bi bi-chevron-down">01:00 - 02:00  Lunch Time</option> -->
+                                <option value="02:00 - 02:30">02:00 - 02:30</option>
+                                <option value="02:30 - 03:00">02:30 - 03:00</option>
+                                <option value="03:00 - 03:30">03:00 - 03:30</option>
+                                <option value="03:30 - 04:00">03:30 - 04:00</option>
+                                <option value="04:00 - 04:30">04:00 - 04:30</option>
+                                <option value="04:30 - 05:00">04:30 - 05:00</option>
+                            </select>
+                            <span
+                            *ngIf="appointmentForm.get('slot')?.touched && appointmentForm.get('slot')?.hasError('required')">Please
+                            select valid slot </span>
+
                         </div>
                     </div>
 
-                    <div class="form-outline mb-4">
-                        <div class="row form-outline mb-4">
-                            <div class="col-md-6">
-                                <label class="form-label" for="form2Example17">Reason</label>
-                                <input type="text" id="form2Example17" formControlName="reason" class="form-control"
-                                    placeholder="Enter Reason Like Fever, cold" />
-                                <span
-                                    *ngIf="appointmentForm.get('reason')?.touched && appointmentForm.get('reason')?.hasError('required')">Please
-                                    Enter Reason</span>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-label" for="form2Example17">Date</label>
-                                <input type="date" value="yyyy-mm-dd" id="form2Example17" formControlName="dateTime"
-                                    class="form-control" />
-                                <span
-                                    *ngIf="appointmentForm.get('dateTime')?.touched && appointmentForm.get('dateTime')?.hasError('required')">Please
-                                    select Date </span>
-
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-label" for="form2Example17">Slot</label>
-                                <select  formControlName="slot"  class="form-control">
-                                    <option value="10:00 - 10:30">10:00 - 10:30</option>
-                                    <option value="10:30 - 11:00">10:30 - 11:00</option>
-                                    <option value="11:00 - 11:30">11:00 - 11:30</option>
-                                    <option value="11:30 - 12:00">11:30 - 12:00</option>
-                                    <option value="12:00 - 12:30">12:00 - 12:30</option>
-                                    <option value="12:30 - 01:00">12:30 - 01:00</option>
-                                    <!-- <option class="bi bi-chevron-down">01:00 - 02:00  Lunch Time</option> -->
-                                    <option value="02:00 - 02:30">02:00 - 02:30</option>
-                                    <option value="02:30 - 03:00">02:30 - 03:00</option>
-                                    <option value="03:00 - 03:30">03:00 - 03:30</option>
-                                    <option value="03:30 - 04:00">03:30 - 04:00</option>
-                                    <option value="04:00 - 04:30">04:00 - 04:30</option>
-                                    <option value="04:30 - 05:00">04:30 - 05:00</option>
-                                </select>
-                                <span
-                                *ngIf="appointmentForm.get('slot')?.touched && appointmentForm.get('slot')?.hasError('required')">Please
-                                select valid slot </span>
-                               
-                                  
-                                
-
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="row form-outline mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label" for="form2Example17">Birth Date</label>
+                            <input type="date" id="form2Example17" formControlName="dob" class="form-control" placeholder="Birth Date" />
+                            <!-- <span
+                                                    *ngIf="appointmentForm.get('email')?.touched && appointmentForm.get('email')?.hasError('required')">Please
+                                                    Enter Email</span> -->
+                        </div>
                         <div class="col-md-6">
 
                             <label class="form-label" for="form2Example27">Gender</label>
@@ -127,14 +133,24 @@
                                 <label><input type="radio" name="gender" formControlName="gender"
                                         value="female">Female</label>
                             </div>
-                            <span
+                            <!-- <span
                                 *ngIf="appointmentForm.get('gender')?.touched && appointmentForm.get('gender')?.hasError('required')">Plese
-                                Select Gender</span>
+                                Select Gender</span> -->
                         </div>
+                    </div>
 
+                    <div class="row form-outline mb-4"> 
                         <div class="col-md-6">
-                            <button class="btn btn-dark btn-lg btn-block" style="width: 100%;" type="submit">Add
-                            </button>
+                            <label class="form-label" for="form2Example17">Reason</label>
+                            <input type="text" id="form2Example17" formControlName="reason" class="form-control"
+                                placeholder="Enter Reason Like Fever, cold" />
+                            <span
+                                *ngIf="appointmentForm.get('reason')?.touched && appointmentForm.get('reason')?.hasError('required')">Please
+                                Enter Reason</span>
+                        </div>
+                        <div class="col-md-6">
+                            <br>
+                            <button class="btn btn-dark btn-lg btn-block" style="width: 100%;" type="submit">Submit</button>
                         </div>
                     </div>
 

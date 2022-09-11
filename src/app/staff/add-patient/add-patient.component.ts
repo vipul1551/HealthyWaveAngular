@@ -22,7 +22,6 @@ export class AddPatientComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
     
   }
 
