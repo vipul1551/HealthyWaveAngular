@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -28,57 +29,108 @@ export class AppointmentListComponent implements OnInit {
   dateTime: String = ""
   reason: String = ""
   isApproved: Boolean = false
-  constructor(private appointmentService: AppointmentServiceService, private toastr: ToastrService,private router:Router) { }
+  appointmentDate = ''
+  currentDate = new Date();
+  todayDate = formatDate(this.currentDate, 'dd-MM-yyyy', 'en-US');
+  constructor(private appointmentService: AppointmentServiceService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
     this.appointmentService.appointmentList().subscribe(res => {
-      this.appointments = res.data
-      this.router.navigateByUrl("/staff/appointmentlist")
-    },err =>{
+      for (let i = 0; i < res.data.length; i++) {
+        this.dateTime = res.data[i].dateTime
+        this.appointmentDate =this.dateTime.substring(0,10)
+        console.log(this.appointmentDate);
+        console.log(this.appointmentDate == this.todayDate);
+        
+        if(this.appointmentDate == this.todayDate){
+          console.log("data match....");
+          this.appointment = res.data[i]
+          this.appointments.push(this.appointment)
+        }
+      }
+      console.log(this.todayDate);
+      console.log(res.data[0].dateTime);
+
+    }, err => {
 
     })
   }
 
-  getById(id:any){
+  getById(id: any) {
     this.appointmentService.appointmentById(id).subscribe(res => {
       console.log("res of get by appointment Id");
-      console.log(res.data);
       this.appointment = res.data
+      console.log(res.data.isApproved);
+
       console.log(this.appointment);
-      this.approveAppointment(this.appointment)
-     
-    },err =>{
+      if (res.data.isApproved == false) {
+        this.approveAppointment(this.appointment)
+        console.log("approved call...");
+
+      } else {
+        this.declineAppointment(this.appointment)
+        console.log("decline call...");
+
+      }
+
+    }, err => {
 
     })
   }
 
- 
+
 
   approveAppointment(appointment: any) {
     this.appointmentService.approveAppointment(appointment).subscribe(resp => {
       this.toastr.success(resp.msg)
       console.log(resp);
- this.appointmentService.appointmentList().subscribe(res => {
-        this.appointments = res.data
+      this.appointmentService.appointmentList().subscribe(res => {
+        this.appointments = []
+        for (let i = 0; i < res.data.length; i++) {
+          this.dateTime = res.data[i].dateTime
+          this.appointmentDate =this.dateTime.substring(0,10)
+          console.log(this.appointmentDate);
+          console.log(this.appointmentDate == this.todayDate);
+          
+          if(this.appointmentDate == this.todayDate){
+            console.log("data match....");
+            this.appointment = res.data[i]
+            this.appointments.push(this.appointment)
+          }
+        }
       })
-      // this.appointments = this.appointments.filter(a => a.appointmentId != id)
     }, err => {
       console.log(err);
       this.toastr.error(err)
     })
- }
- 
+  }
 
-  // declineAppointment(id:any){
-  
-  //   this.appointmentService.declineAppointment(id).subscribe(resp=>{
-  //     this.toastr.success(resp.msg)
-  //     console.log(resp);console.log("ID is :"+id);
-  //     this.router.navigateByUrl("staff/appointmentlist")
-  //   },err=>{
-  //     this.toastr.error(err.msg);
-      
-  //   })
-  //   }
+
+  declineAppointment(appointment: any) {
+
+    this.appointmentService.declineAppointment(appointment).subscribe(resp => {
+      this.toastr.error(resp.msg)
+      console.log(resp);
+      this.router.navigateByUrl("staff/appointmentlist")
+      this.appointmentService.appointmentList().subscribe(res => {
+        this.appointments = []
+        for (let i = 0; i < res.data.length; i++) {
+          this.dateTime = res.data[i].dateTime
+          this.appointmentDate =this.dateTime.substring(0,10)
+          console.log(this.appointmentDate);
+          console.log(this.appointmentDate == this.todayDate);
+          
+          if(this.appointmentDate == this.todayDate){
+            console.log("data match....");
+            this.appointment = res.data[i]
+            this.appointments.push(this.appointment)
+          }
+        }
+      })
+    }, err => {
+      this.toastr.error(err.msg);
+
+    })
+  }
 
 }

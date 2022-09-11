@@ -19,7 +19,7 @@ export class AppointmentServiceService {
   approveAppointment(appointment:any):Observable<any>{
     return this.http.put("http://localhost:9996/staff/approveappointment",appointment)
   }
-  declineAppointment(id:any):Observable<any>{
-    return this.http.put("http://localhost:9996/staff/declineappointment/"+id,id)
+  declineAppointment(appointment:any):Observable<any>{
+    return this.http.put("http://localhost:9996/staff/declineappointment",appointment)
   }
 }

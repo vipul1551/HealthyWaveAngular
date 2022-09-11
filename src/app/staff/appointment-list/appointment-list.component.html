@@ -20,7 +20,8 @@
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    
+                    <tbody><div *ngIf=""></div>
                         <tr *ngFor="let a of appointments">
                             <th scope="row">{{a.caseNumber}}</th>
                             <td>{{a.patientName}}</td>
@@ -31,12 +32,12 @@
                             <td>{{a.dateTime}}</td>
                             <td>{{a.reason}}</td>
                             <td>{{a.isApproved}}</td>
-                            <td><div *ngIf="a.isApproved == true; else elseBlock"></div>
+                            <td><div *ngIf="a.isApproved == true; else elseBlock"> <button
+                                class="btn btn-danger" (click)="getById(a.appointmentId)"><i
+                                    class="fa fa-close" aria-hidden="true"></i></button></div>
                                 <ng-template #elseBlock><button class="btn btn-success" (click)="getById(a.appointmentId)"><i
                                     class="fa fa-check" aria-hidden="true"></i></button>&nbsp;</ng-template>
-                                <button
-                                    class="btn btn-danger" (click)="getById(a.appointmentId)"><i
-                                        class="fa fa-close" aria-hidden="true"></i></button></td>
+                               </td>
                         </tr>
                     </tbody>
                 </table>
