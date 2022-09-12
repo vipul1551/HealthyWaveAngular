@@ -60,7 +60,7 @@
                             <label class="form-label" for="form2Example17">State</label>
                             <select class="form-select" aria-label="Default select example" (change)="getCityByState($event)" formControlName="state">
                                 <!-- <option selected disabled [ngValue]=""></option>Select State</option>  -->
-                                <option *ngFor="let s of states" value="{{s.stateId}}" >{{s.stateName}}</option>
+                                <option *ngFor="let s of states" value="{{s.stateId}}" formControlName="stateId">{{s.stateName}}</option>
                             </select>
                         </div>
                         <div class="col-md-4" formGroupName="city">
