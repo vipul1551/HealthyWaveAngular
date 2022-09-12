@@ -27,12 +27,20 @@ export class AddAppointmentComponent implements OnInit {
       email: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
       dob: new FormControl('', [Validators.required]),
-      doctor: new FormControl('', [Validators.required]),
-      state: new FormControl(this.states, [Validators.required]),
-      city: new FormControl('', [Validators.required]),
+      doctor : new FormGroup({
+        doctorId: new FormControl('', [Validators.required]),
+      }),
+      state: new FormGroup({
+        stateId: new FormControl(this.states, [Validators.required]),
+      }),
+      city:new FormGroup({
+        cityId: new FormControl('', [Validators.required]),
+      }),
       reason: new FormControl('', [Validators.required]),
       date: new FormControl('', [Validators.required]),
-      time: new FormControl('', [Validators.required])
+      slot : new FormGroup({
+        slotId : new FormControl('',[Validators.required])
+      }),
     })
   }
 
@@ -46,6 +54,9 @@ export class AddAppointmentComponent implements OnInit {
     this.doctorService.getAllDoctorsApi().subscribe(resp=>{
       console.log(resp.data);
       this.doctors = resp.data
+    },err =>{
+      console.log(err.error.msg);
+      
     })
   }
 
@@ -71,10 +82,14 @@ export class AddAppointmentComponent implements OnInit {
   getSlotByDateDoctor(event:any){
     this.date = event.target.value   
     console.log( this.date);
+    let doctorDate = {
+      "doctorId":this.doctorId,
+      "date":this.date
+    }
   let map = new Map([['doctorId',this.doctorId],['date',this.date]])
    console.log(map);
    
-    this.appointmentService.getSlotsByDateDoctor(map).subscribe(resp=>{
+    this.appointmentService.getSlotsByDateDoctor(doctorDate).subscribe(resp=>{
       this.slots = resp.data
       console.log(resp);
       

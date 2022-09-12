@@ -56,16 +56,16 @@
                                                     *ngIf="appointmentForm.get('email')?.touched && appointmentForm.get('email')?.hasError('required')">Please
                                                     Enter Email</span> -->
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" >
                             <label class="form-label" for="form2Example17">State</label>
                             <select class="form-select" aria-label="Default select example" (change)="getCityByState($event)" formControlName="state">
                                 <!-- <option selected disabled [ngValue]=""></option>Select State</option>  -->
                                 <option *ngFor="let s of states" value="{{s.stateId}}" >{{s.stateName}}</option>
                             </select>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" formGroupName="city">
                             <label class="form-label" for="form2Example17">City</label>
-                            <select class="form-select" aria-label="Default select example" formControlName="city">
+                            <select class="form-select" aria-label="Default select example" formControlName="cityId">
                                 <option selected disabled>Select City</option>
                                 <option *ngFor="let c of cities" value="{{c.cityId}}">{{c.cityName}}</option>
                                 <!--<option value="staff">Staff</option> -->
@@ -74,9 +74,9 @@
                     </div>    
 
                     <div class="row form-outline mb-4">
-                        <div class="col-md-4">
+                        <div class="col-md-4" formGroupName="doctor">
                             <label class="form-label" for="form2Example17">Doctor</label>
-                            <select class="form-select" formControlName="doctor" (change)="getDoctorId($event)">
+                            <select class="form-select" formControlName="doctorId" (change)="getDoctorId($event)">
                                 <option selected disabled value="">Select Doctor</option>
                                 <option *ngFor="let d of doctors" value="{{d.doctorId}}">Dr. {{d.user.firstName|uppercase}} {{d.user.lastName|uppercase}} - {{d.specialization.spcialization}}</option>
                                 <!-- <option value="staff">Staff</option> -->
@@ -91,23 +91,23 @@
                                 select Date </span>
 
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" formGroupName = "slot">
                             <label class="form-label" for="form2Example17">Slot</label>
-                            <select class="form-select" formControlName="time">
+                            <select class="form-select" formControlName="slotId">
                                 <option value="" disabled selected>Select Slot</option>
-                                <option value="10:00 - 10:30">10:00 - 10:30</option>
-                                <option value="10:30 - 11:00">10:30 - 11:00</option>
+                                <option *ngFor="let d of slots" value="{{d.slotId}}">{{d.time}}</option>
+                                <!-- <option value="10:30 - 11:00">10:30 - 11:00</option>
                                 <option value="11:00 - 11:30">11:00 - 11:30</option>
                                 <option value="11:30 - 12:00">11:30 - 12:00</option>
                                 <option value="12:00 - 12:30">12:00 - 12:30</option>
                                 <option value="12:30 - 01:00">12:30 - 01:00</option>
-                                <!-- <option class="bi bi-chevron-down">01:00 - 02:00  Lunch Time</option> -->
+                             <option class="bi bi-chevron-down">01:00 - 02:00  Lunch Time</option> 
                                 <option value="02:00 - 02:30">02:00 - 02:30</option>
                                 <option value="02:30 - 03:00">02:30 - 03:00</option>
                                 <option value="03:00 - 03:30">03:00 - 03:30</option>
                                 <option value="03:30 - 04:00">03:30 - 04:00</option>
                                 <option value="04:00 - 04:30">04:00 - 04:30</option>
-                                <option value="04:30 - 05:00">04:30 - 05:00</option>
+                                <option value="04:30 - 05:00">04:30 - 05:00</option> -->
                             </select>
                             <span
                             *ngIf="appointmentForm.get('slot')?.touched && appointmentForm.get('slot')?.hasError('required')">Please

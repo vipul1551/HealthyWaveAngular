@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,25 +11,25 @@ export class SessionService {
   constructor(private http :HttpClient) { }
 
   loginApi(user: any): Observable<any> {
-    return this.http.post("http://localhost:9996/public/login", user)
+    return this.http.post(environment.url + "public/login", user)
   }
 
   signupApi(user: any): Observable<any> {
-    return this.http.post("http://localhost:9996/public/signup", user)
+    return this.http.post(environment.url + "public/signup", user)
   }
 
   // deleteAuthtokenApi(userId:any): Observable<any>{
-  //   return this.http.post("http://localhost:9996/public/logout/"+userId,userId)
+  //   return this.http.post(environment.url + "public/logout/"+userId,userId)
   // }
   emailVeryfyApi(email:any):Observable<any>{
-    return this.http.post("http://localhost:9996/public/sendotp", email)
+    return this.http.post(environment.url + "public/sendotp", email)
   }
 
   verifyOtp(otp:any):Observable<any>{
-    return this.http.post("http://localhost:9996/public/verifyotp",otp)
+    return this.http.post(environment.url + "public/verifyotp",otp)
   }
 
   updatePassword(user:any):Observable<any>{
-    return this.http.put("http://localhost:9996/public/updatepassword",user)
+    return this.http.put(environment.url + "public/updatepassword",user)
   }
 }
